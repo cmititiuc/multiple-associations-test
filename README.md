@@ -1,24 +1,14 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+rails g model User name:string account_balance:integer
+rails g model Product name:string cost:integer
+rails g model Cart user:references product:references
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+cart = User.first.build_cart
+cart.products << Product.second
+cart.products << Product.second
+cart.products << Product.second
+cart.valid?
+```
